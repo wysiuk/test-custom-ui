@@ -1,3 +1,12 @@
+---
+response_headers: >
+  {
+  "X-Frame-Options": null,
+  "Content-Security-Policy": "frame-ancestors https://*.siteglide.com"
+  }
+authorization_policies:
+  - modules/siteglide_system/module_is_in_admin
+---
 Test
 
 {%- include 'module_form', id: '3' -%}
