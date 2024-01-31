@@ -1,0 +1,16 @@
+<div class="row no-gutters mb-4">
+	<div class="col-12">
+		<h2 class="mb-3 h3 sg-h3">Archive by Years</h2>
+		<ul class="list-unstyled">
+			{% for year in blog_archive_years %}
+				<li>{{year.start | date: "%Y"}}</li>
+				<ul class="list-unstyled">
+					{% assign months_by_year = blog_archive_months | group_by: "year" %}
+					{% for month in months_by_year[year.start] %}
+						<li><a href="{{context.location.pathname}}?range_gte={{month.start}}&range_lt={{month.end}}&range_type=month" title="{{month.start | date: "%b" }}">{{month.start | date: "%b" }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

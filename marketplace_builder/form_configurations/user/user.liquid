@@ -1,0 +1,36 @@
+---
+fields:
+  properties:
+    address:
+      name: Address
+      type: input_text
+      live: true
+      hidden: true
+      order: 0
+      editable: true
+      required: false
+      validation: {}
+    company:
+      name: Company
+      type: datasource_multi
+      live: true
+      hidden: true
+      order: 0
+      editable: true
+      datasource_id: company
+      required: false
+      validation: {}
+    tag_array:
+      name: Tags
+      type: datasource_multi
+      live: true
+      hidden: true
+      order: 0
+      editable: true
+      datasource_id: tag
+      required: false
+      validation: {}
+name: user
+resource: User
+resource_owner: anyone
+---

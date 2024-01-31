@@ -1,0 +1,28 @@
+<section class="blog blog-details-01">
+	<div class='container'>
+		<div class='row'>
+			<div class='col-12 col-md-8 offset-md-2'>
+				<h1>{{this['Title']}}</h1>
+				<img src="{{this['Main Image'] | asset_url}}" alt="{{this['Main Image Alt']}}" class="blog-details-main-image">
+				<div class='row'>
+					<div class="col-12 d-flex justify-content-between flex-wrap">
+						<div class="blog-tags">
+							<div class="tag"><i class="fas fa-calendar"></i>{{this['release_date'] | date: "%d %B %Y"}}</div>
+							{% if this.category_array != blank %}
+								<p class="tag"><i class="fas fa-tag"></i>
+									{% for category in this.category_array %}
+											{% assign this_category = context.exports.categories.data[category] %}
+											<a href="{{context.headers.PATH_INFO}}?category={{category}}">{{this_category.name}}</a>{% unless forloop.last %}, {% endunless %}
+									{% endfor %}
+              	</p>
+							{% endif %} 
+						</div>
+						{%- include 'modules/siteglide_authors/get/get_item_author', author_layout: 'default/author', author_layout_type: 'detail', author_id: this['Author'] -%}
+					</div>
+				</div>
+				{{this['Content']}}
+				{%- include 'modules/siteglide_authors/get/get_item_author', author_layout: 'default/author', author_layout_type: 'footer', author_id: this['Author'] -%}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,13 @@
+---
+do_not_add_return_to_to_authorization_policies: false
+escape_output_instead_of_sanitize: false
+graphql_argument_type_mismatch_mode: warning
+liquid_add_old_variables: false
+liquid_check_mode: warning
+liquid_raise_mode: false
+require_table_for_record_delete_mutation: false
+safe_translate: false
+skip_elasticsearch: false
+slug_exact_match: false
+websockets_require_csrf_token: false
+---

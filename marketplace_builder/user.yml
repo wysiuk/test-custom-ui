@@ -1,0 +1,9 @@
+---
+properties:
+- name: address
+  type: string
+- name: company
+  type: array
+- name: tag_array
+  type: array
+---
